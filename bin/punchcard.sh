@@ -35,4 +35,4 @@ find "$DATA" -type f -printf "%P\n" \
  | sort \
  | awk -F_ "$FORMAT" \
  | sed '/^$/d;$a\' \
- | cut --complement -c 39-42
+# | cut --complement -c 39-42

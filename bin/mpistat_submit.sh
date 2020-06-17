@@ -15,5 +15,7 @@ MPISTAT_HOME=/lustre/scratch114/teams/hgi/lustre_reports/mpistat
 # cd to the script directory
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 # bsub the job
+# "normal" would be nice but in testing this has hit the runlimit, so
+# use "long" for now - 20200506 dh3
 bsub -q normal -G systest-grp -o $1 -e $2 -R"span[ptile=1] select[mem>4000] rusage[mem=4000]" -M4000 -n$3 $MPISTAT_HOME/bin/mpistat_wrapper.sh $4 ${@:5}
 

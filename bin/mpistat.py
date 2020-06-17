@@ -13,6 +13,7 @@ import stat
 import mpistat_common
 import base64
 from hgi_rules import hgi_rules
+import socket
 
 
 class mpistat(ParallelWalk):
@@ -119,7 +120,8 @@ if __name__ == "__main__":
     workers = comm.size
 
     # start log message
-    mpistat_common.LOG("starting mpi worker %d of %d" % (rank, workers))
+    hostname = socket.gethostname().split('.')[0] # unqualified
+    mpistat_common.LOG("starting mpi worker %d of %d on %s" % (rank, workers, hostname))
 
     # init the crawler
     results = 0
