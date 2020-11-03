@@ -30,8 +30,8 @@ exec > $LOG 2>&1
 JOBIDS=()
 
 # loop over lustre volumes to process
-#for VOL in 114 ## TESTING 115 116 117 118 119
-for VOL in 114 115 116 117 118 119
+#for VOL in 114 ## TESTING 115 116 117 118 119 123
+for VOL in 114 115 116 117 118 119 123
 do
 	# submit the mpistat crawler job
 	JOBID1=$($BASE/mpistat/bin/mpistat_submit.sh $BASE/mpistat/logs/%J_$VOL.out $BASE/mpistat/logs/%J_$VOL.err $WORKERS $BASE/mpistat/data/$VOL /lustre/scratch$VOL)
