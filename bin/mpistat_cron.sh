@@ -17,8 +17,12 @@ BASE="/lustre/scratch114/teams/hgi/lustre_reports"
 WORKERS=16
 REGEX="Job <([0-9]+)> is submitted to queue <normal>."
 
-export MODULEPATH=/software/modules:$MODULEPATH
-module load ISG/openmpi/4.0.3
+#export MODULEPATH=/software/modules:$MODULEPATH
+#module load ISG/openmpi/4.0.3
+# loading modules in a script is troublesome
+export PATH=/software/openmpi-4.0.3/bin:$PATH
+export LD_LIBRARY_PATH=/software/openmpi-4.0.3/lib:$LD_LIBRARY_PATH
+
 export OMPI_ALLOW_RUN_AS_ROOT=1
 export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1
 
