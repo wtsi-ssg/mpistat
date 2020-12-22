@@ -42,7 +42,7 @@ exceptions = {
 # * Corrected regex for scratch115
 # * Removed scratch113 alternate
 # * Added scratch119 alternate (humgen MDTs are 2 and 3)
-re_hgi_rules=re.compile(r"^((\/lustre\/scratch114|\/lustre\/scratch115\/realdata\/mdt[0123]|\/lustre\/scratch118\/humgen\/hgi|\/lustre\/scratch119\/realdata\/mdt[23])|\/nfs\/humgen01)\/(teams|projects)\/([^/]+)\/.*$")
+re_hgi_rules=re.compile(r"^((\/lustre\/scratch114|\/lustre\/scratch115\/realdata\/mdt[0123]|\/lustre\/scratch118\/humgen\/hgi|\/lustre\/scratch119\/realdata\/mdt[23]|\/lustre\/scratch123\/hgi\/mdt[12])|\/nfs\/humgen01)\/(teams|projects)\/([^/]+)\/.*$")
 
 def hgi_rules(path, s) :
     gid=s.st_gid
